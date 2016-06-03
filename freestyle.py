@@ -4,6 +4,7 @@ import os
 import sched, time
 import random
 from random import shuffle
+from random import randint
 import pyglet
 
 pyglet.options['audio'] = ('openal', 'silent')
@@ -32,22 +33,16 @@ def beatz():
     player.queue(playlist[1])
     player.play()
     print('playing beatz')
-    print(wordz[0][0])
 
 # Timer to say words
 
 s = sched.scheduler(time.time, time.sleep)
 
-
-# rapping patterns 
-
-# pat1 = [random.choice(greetings), random.choice(greetings)]
-
 # rapping function
 
 def rap():
     # os.system('say ' + words[1])
-    bar = ' '.join([random.choice(greetings), random.choice(be), random.choice(r1)])
+    bar = ' '.join(random.choice(wordz[randint(0,2)]) for _ in range(randint(0,6)))
     # print (random.choice(greetings))
     os.system('say ' + bar)
     print(bar)
