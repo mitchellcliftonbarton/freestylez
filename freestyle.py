@@ -42,7 +42,6 @@ wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, sport
 
 # beatz
 
-song1 = pyglet.media.load('beats/heart-of-the-city.mp3')
 song2 = pyglet.media.load('beats/breathe.mp3')
 song3 = pyglet.media.load('beats/everything.mp3')
 song4 = pyglet.media.load('beats/jazz.mp3')
@@ -63,7 +62,7 @@ player = pyglet.media.Player()
 # Play beatz
 
 def beatz():
-    playlist = [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16]
+    playlist = [song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16]
     shuffle(playlist)
     player.queue(playlist[0])
     player.queue(playlist[1])
@@ -80,7 +79,6 @@ def beatz():
     player.queue(playlist[12])
     player.queue(playlist[13])
     player.queue(playlist[14])
-    player.queue(playlist[15])
     player.play()
     print('playing beatz')
 
@@ -115,4 +113,3 @@ def hypeIt():
     freestyle()
 
 hypeIt()
-
