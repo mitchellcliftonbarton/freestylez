@@ -13,7 +13,7 @@ pyglet.options['audio'] = ('openal', 'silent')
 
 # Words to use in freestyle
 hype = ['about to break it down', 'about to drop some bars', 'lay down the beat', 'drop the beat', 'drop it', 'lets go', 'spin it', 'lay it down']
-greetings = ['hello,', 'what up', 'what up,', 'sup', 'sup', 'yep', 'hi', 'whats happening', 'whats happening,', 'whats up', 'whats up', 'yeah', 'yeah,', 'hey', 'hey,', 'uh', 'uh huh', 'yup']
+greetings = ['hello,', 'yo', 'yo,', 'what up', 'what up,', 'sup', 'sup', 'yep', 'hi', 'whats happening', 'whats happening,', 'whats up', 'whats up', 'yeah', 'yeah,', 'hey', 'hey,', 'uh', 'uh huh', 'yup']
 be = ['is', 'was', 'will be', 'is not', 'was not', 'will not be', 'will never be', 'never was', 'never is', 'always is', 'always will be', 'I am', 'I be', 'we be', 'they be']
 r1 = ['mic', 'like', 'spike', 'bike', 'pike', 'turnpike', 'ride', 'slide', 'tide', 'pie', 'my', 'cry', 'tie', 'sty', 'pry', 'dry']
 r2 = ['tree', 'me', 'tee', 'see', 'plea', 'treat', 'meet', 'seat', 'feat', 'beat', 'beats', 'meats', 'pleat', 'treat', 'pee', 'dee', 'flee']
@@ -27,9 +27,10 @@ r9 = ['got', 'rot', 'not', 'spot', 'pop', 'top', 'sop', 'mop', 'crop', 'bop', 'b
 r10 = ['ready', 'steady', 'spaghetti', 'teddy', 'petty', 'yeti', 'many', 'confetti', 'penny', 'pennies', 'benny']
 r11 = ['find', 'wind', 'rewind', 'kind', 'mind', 'bind', 'rind', 'blind', 'twine', 'mine', 'sign', 'wine', 'time', 'rhyme', 'rhymes']
 r12 = ['rollin', 'bowlin', 'patrol', 'rovin', 'roving', 'rolling', 'riding', 'cruising', 'sliding', 'slipping', 'tripping', 'trip']
+r13 = ['ballin', 'balling', 'balla', 'calling', 'callin', 'stallin', 'crawling', 'impala', 'falling', 'apalling', 'shot callin', 'folly', 'trolly']
 
 # themes
-sports = ['ball', 'sports', 'basket', 'basketball', 'baseball', 'football', 'quarterback', 'coach', 'player', 'game', 'points', 'score', 'play', 'playing', 'soccer']
+sports = ['ball', 'dunk', 'shoot', 'sports', 'basket', 'basketball', 'baseball', 'football', 'quarterback', 'coach', 'player', 'game', 'points', 'score', 'play', 'playing', 'soccer']
 fruits = ['banana', 'orange', 'apple', 'pineapple', 'tangerine', 'melon', 'watermelon', 'grape', 'fruit', 'grapefruit', 'lemon', 'lime', 'cherry', 'strawberry', 'raspberry', 'blueberry']
 veggies = ['veggies', 'vegetable', 'carrot', 'tomato', 'lettuce', 'broccoli', 'asparagus', 'pepper', 'mushroom']
 art = ['paint', 'paper', 'canvas', 'pen', 'pencil', 'collage', 'collab', 'piece', 'art', 'photo', 'photograph']
@@ -37,8 +38,18 @@ landscape = ['river', 'mountain', 'plain', 'hill', 'lake', 'stream', 'rock', 'tr
 mystical = ['dragon', 'werewolf', 'wizard', 'godzilla', 'zombie', 'witch', 'dinosaur', 't rex', 'monster', 'alien', 'u f o', 'lifeform']
 cars = ['audi', 'porsche', 'benz', 'mercedes', 'land rover', 'range rover', 'ferrari', 'chevy', 'subaru', 'race car', 'dragster']
 animals = ['monkey', 'aardvark', 'elephant', 'tiger', 'lion', 'gazelle', 'eagle', 'spider', 'bug', 'bird', 'fish', 'shark', 'whale', 'gorilla']
+thug = ['boss', 'bawse', 'gangsta', 'fly', 'amigo', 'homy', 'friend', 'hero', 'champion', 'dawg', 'bro', 'brother', 'sister', 'mister', 'pal', 'dude']
+geo = ['USA', 'south america', 'north america', 'canada', 'mexico', 'chile', 'europe', 'africa', 'asia', 'polynesia', 'china', 'antarctica', 'states', 'region', 'country', 'city', 'town']
+cities = ['salt lake', 'LA', 'los angeles', 'new york', 'NY', 'atlanta', 'chicago', 'toronto', 'tokyo', 'london', 'madrid', 'rome', 'berlin', 'sao paolo', 'seattle', 'san fran', 'paris', 'egypt', 'hong kong']
+countries = ['united states', 'england', 'italy', 'france', 'argentina', 'germany', 'japan', 'korea', 'new zealand', 'australia', 'russia', 'south africa', 'ghana', 'colombia', 'brazil']
+money = ['dollar', 'dollar bills', 'cash', 'coins', 'cents', 'pounds', 'euros', 'green', 'yen', 'pesos', 'benjamins', 'franklins', 'millions', 'mill', 'paper']
+colors = ['red', 'yellow', 'green', 'blue', 'purple', 'white', 'black', 'brown', 'orange', 'teal', 'burnt siena', 'yellow ochre', 'gray', 'navy', 'gold', 'silver', 'platinum', 'metallic', 'flourescent']
+brands = ['google', 'facebook', 'twitter', 'nike', 'snapchat', 'insta', 'tumblr', 'adidas', 'jordan', 'supreme', 'undefeated', 'hundreds', 'vans', 'new era', 'levis', 'uni qlo', 'bape', 'ice cream', 'billionaire boys club']
+shoes = ['air max', "J's", 'spizike', 'air force one', 'dunks', 'high tops', 'slip ons', 'sandals', 'foam posite', 'superstars', 'nikes', 'jordans']
+bling = ['chain', 'necklace', 'two finger ring', 'piece', 'bling', 'jewels', 'watch', 'accessories', 'snap back', 'fitted', 'belt buckle', 'pin', 'rope']
+teams = ['yankees', 'dodgers', 'red sox', 'lakers', 'celtics', 'jazz', 'warriors', 'sonics', 'giants', 'mets', 'broncos', 'raiders', 'patriots', 'redskins', 'bills', 'cowboys']
 
-wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, sports, fruits, veggies, art, landscape, mystical, cars, animals]
+wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, sports, fruits, veggies, art, landscape, mystical, cars, animals, thug, geo, cities, countries, money, colors, brands, shoes, bling, teams]
 
 # beatz
 
@@ -80,8 +91,8 @@ def beatz():
     player.queue(playlist[13])
     player.queue(playlist[14])
     player.play()
-    print('playing beatz')
-
+    # t = Timer(1.5, beatz)
+    # t.start()
 # rapping function
 
 barLen = list(range(1,10))
@@ -94,7 +105,7 @@ timez = [.5, .75, 1.0, 1.5, 2.0]
 
 def rap():
     # rando1 = randint(0,4)
-    bar = ' '.join(random.choice(wordz[randint(0,21)]) for _ in range(random.choice(barLen)))
+    bar = ' '.join(random.choice(wordz[randint(0,32)]) for _ in range(random.choice(barLen)))
     # os.system('say -v ' + lead + ' ' + bar)
     os.system('say ' + bar)
     print(bar)
