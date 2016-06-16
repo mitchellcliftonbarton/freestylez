@@ -53,51 +53,61 @@ wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, 
 
 # beatz
 
-song2 = pyglet.media.load('beats/breathe.mp3')
-song3 = pyglet.media.load('beats/everything.mp3')
-song4 = pyglet.media.load('beats/jazz.mp3')
-song5 = pyglet.media.load('beats/electric.mp3')
-song6 = pyglet.media.load('beats/preservation.mp3')
-song7 = pyglet.media.load('beats/88.mp3')
-song8 = pyglet.media.load('beats/93.mp3')
-song9 = pyglet.media.load('beats/cream.mp3')
+# song2 = pyglet.media.load('beats/breathe.mp3')
+# song3 = pyglet.media.load('beats/everything.mp3')
+# song4 = pyglet.media.load('beats/jazz.mp3')
+# song5 = pyglet.media.load('beats/electric.mp3')
+# song6 = pyglet.media.load('beats/preservation.mp3')
+# song7 = pyglet.media.load('beats/88.mp3')
+# song8 = pyglet.media.load('beats/93.mp3')
+# song9 = pyglet.media.load('beats/cream.mp3')
 song10 = pyglet.media.load('beats/drop.mp3')
-song11 = pyglet.media.load('beats/far.mp3')
-song12 = pyglet.media.load('beats/knock.mp3')
-song13 = pyglet.media.load('beats/ny.mp3')
-song14 = pyglet.media.load('beats/ready.mp3')
-song15 = pyglet.media.load('beats/welcome.mp3')
-song16 = pyglet.media.load('beats/what.mp3')
+# song11 = pyglet.media.load('beats/far.mp3')
+# song12 = pyglet.media.load('beats/knock.mp3')
+# song13 = pyglet.media.load('beats/ny.mp3')
+# song14 = pyglet.media.load('beats/ready.mp3')
+# song15 = pyglet.media.load('beats/welcome.mp3')
+# song16 = pyglet.media.load('beats/what.mp3')
 player = pyglet.media.Player()
 
 # Play beatz
 
 def beatz():
-    playlist = [song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16]
-    shuffle(playlist)
-    player.queue(playlist[0])
-    player.queue(playlist[1])
-    player.queue(playlist[2])
-    player.queue(playlist[3])
-    player.queue(playlist[4])
-    player.queue(playlist[5])
-    player.queue(playlist[6])
-    player.queue(playlist[7])
-    player.queue(playlist[8])
-    player.queue(playlist[9])
-    player.queue(playlist[10])
-    player.queue(playlist[11])
-    player.queue(playlist[12])
-    player.queue(playlist[13])
-    player.queue(playlist[14])
+    # def on_player_eos():
+    #     print('repeating')
+    #     beatz()
+    #
+    # player.on_player_eos = on_player_eos
+    # player.push_handlers(on_player_eos)
+
+    # playlist = [song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16]
+    # shuffle(playlist)
+    p = pyglet.media.SourceGroup(song10.audio_format, None)
+    p.loop = True
+    p.queue(song10)
+    player.queue(p)
+    # player.queue(playlist[0])
+    # player.queue(playlist[1])
+    # player.queue(playlist[2])
+    # player.queue(playlist[3])
+    # player.queue(playlist[4])
+    # player.queue(playlist[5])
+    # player.queue(playlist[6])
+    # player.queue(playlist[7])
+    # player.queue(playlist[8])
+    # player.queue(playlist[9])
+    # player.queue(playlist[10])
+    # player.queue(playlist[11])
+    # player.queue(playlist[12])
+    # player.queue(playlist[13])
+    # player.queue(playlist[14])
     player.play()
-    # t = Timer(1.5, beatz)
-    # t.start()
+
+# player.push_handlers(on_player_eos)
+
 # rapping function
 
 barLen = list(range(1,10))
-
-# print(barLen)
 
 # lead = random.choice(rapperz)
 
@@ -112,6 +122,7 @@ def rap():
     sys.stdout.flush()
     t = Timer(random.choice(timez), rap)
     t.start()
+
 def freestyle():
     beatz()
     t = Timer(1.5, rap)
