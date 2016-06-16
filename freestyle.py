@@ -45,7 +45,7 @@ countries = ['united states', 'england', 'italy', 'france', 'argentina', 'german
 money = ['dollar', 'dollar bills', 'cash', 'coins', 'cents', 'pounds', 'euros', 'green', 'yen', 'pesos', 'benjamins', 'franklins', 'millions', 'mill', 'paper']
 colors = ['red', 'yellow', 'green', 'blue', 'purple', 'white', 'black', 'brown', 'orange', 'teal', 'burnt siena', 'yellow ochre', 'gray', 'navy', 'gold', 'silver', 'platinum', 'metallic', 'flourescent']
 brands = ['google', 'facebook', 'twitter', 'nike', 'snapchat', 'insta', 'tumblr', 'adidas', 'jordan', 'supreme', 'undefeated', 'hundreds', 'vans', 'new era', 'levis', 'uni qlo', 'bape', 'ice cream', 'billionaire boys club']
-shoes = ['air max', "J's", 'spizike', 'air force one', 'dunks', 'high tops', 'slip ons', 'sandals', 'foam posite', 'superstars', 'nikes', 'jordans']
+shoes = ['air max', 'spizike', 'air force one', 'dunks', 'high tops', 'slip ons', 'sandals', 'foam posite', 'superstars', 'nikes', 'jordans']
 bling = ['chain', 'necklace', 'two finger ring', 'piece', 'bling', 'jewels', 'watch', 'accessories', 'snap back', 'fitted', 'belt buckle', 'pin', 'rope']
 teams = ['yankees', 'dodgers', 'red sox', 'lakers', 'celtics', 'jazz', 'warriors', 'sonics', 'giants', 'mets', 'broncos', 'raiders', 'patriots', 'redskins', 'bills', 'cowboys']
 
@@ -75,38 +75,43 @@ g.loop = True
 # Play beatz
 
 def beatz():
+    # def on_player_eos():
+    #     print('repeating')
+    #     beatz()
+    #
+    # player.on_player_eos = on_player_eos
+    # player.push_handlers(on_player_eos)
+
     playlist = [song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16]
     shuffle(playlist)
-    # player.queue(song10)
-    player.queue(g)
-    # player.queue(playlist[0])
-    # player.queue(random.choice(playlist))
-    # player.queue(playlist[1])
-    # player.queue(playlist[2])
-    # player.queue(playlist[3])
-    # player.queue(playlist[4])
-    # player.queue(playlist[5])
-    # player.queue(playlist[6])
-    # player.queue(playlist[7])
-    # player.queue(playlist[8])
-    # player.queue(playlist[9])
-    # player.queue(playlist[10])
-    # player.queue(playlist[11])
-    # player.queue(playlist[12])
-    # player.queue(playlist[13])
-    # player.queue(playlist[14])
-    # player.play()
+    # p = pyglet.media.SourceGroup(song12.audio_format, None)
+    # p.queue(song12)
+    # p.queue(song3)
+    # p.loop = True
+    # player.queue(p)
+    player.queue(playlist[0])
+    player.queue(playlist[1])
+    player.queue(playlist[2])
+    player.queue(playlist[3])
+    player.queue(playlist[4])
+    player.queue(playlist[5])
+    player.queue(playlist[6])
+    player.queue(playlist[7])
+    player.queue(playlist[8])
+    player.queue(playlist[9])
+    player.queue(playlist[10])
+    player.queue(playlist[11])
+    player.queue(playlist[12])
+    player.queue(playlist[13])
+    player.queue(playlist[14])
     player.play()
-# def on_player_eos():
-#     print('repeated')
-#     beatz()
-#
+    t = Timer(2820, beatz)
+    t.start()
 # player.push_handlers(on_player_eos)
+
 # rapping function
 
 barLen = list(range(1,10))
-
-# print(barLen)
 
 # lead = random.choice(rapperz)
 
@@ -121,6 +126,7 @@ def rap():
     sys.stdout.flush()
     t = Timer(random.choice(timez), rap)
     t.start()
+
 def freestyle():
     beatz()
     t = Timer(1.5, rap)
