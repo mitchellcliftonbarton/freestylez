@@ -107,6 +107,7 @@ def beatz():
     player.play()
     t = Timer(2820, beatz)
     t.start()
+    
 # player.push_handlers(on_player_eos)
 
 # rapping function
