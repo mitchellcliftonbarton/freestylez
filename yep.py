@@ -6,6 +6,7 @@ from pyglet.window import key
 
 pyglet.options['audio'] = ('openal', 'silent')
 window = pyglet.window.Window()
+
 # window.set_visible(visible=False)
 window.set_caption('F R E E S T Y L E Z')
 

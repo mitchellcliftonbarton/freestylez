@@ -69,6 +69,7 @@ song3 = pyglet.media.load('beats/drop-2.mp3', streaming=False)
 # song15 = pyglet.media.load('beats/welcome.mp3')
 # song16 = pyglet.media.load('beats/what.mp3')
 player = pyglet.media.Player()
+
 # Play beatz
 
 def beatz():
@@ -91,6 +92,7 @@ def beatz():
     # player.queue(playlist[13])
     # player.queue(playlist[14])
     player.play()
+
 
 # def on_player_eos():
 #     print('repeating')
