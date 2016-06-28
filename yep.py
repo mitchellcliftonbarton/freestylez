@@ -82,15 +82,30 @@ barLen = list(range(1,10))
 timez = [.5, .75, 1.0, 1.5, 2.0]
 
 def rap():
+    t = Timer(random.choice(timez), rap)
+    @window.event
+    def on_key_press(symbol, modifiers):
+        if symbol == key.A:
+            r.terminate()
+            t.cancel()
+            print('exiting')
+            pyglet.app.exit()
+
+    @window.event
+    def on_close():
+        r.terminate()
+        t.cancel()
+        print('exiting')
+        pyglet.app.exit()
+
     # rando1 = randint(0,4)
     bar = ' '.join(random.choice(wordz[randint(0,32)]) for _ in range(random.choice(barLen)))
     # os.system('say -v ' + lead + ' ' + bar)
     r = subprocess.Popen('say ' + bar, shell=True)
     r.wait()
     print(bar)
-    sys.stdout.flush()
-    # t = Timer(random.choice(timez), rap)
-    # t.start()
+    # sys.stdout.flush()
+    t.start()
 
 def freestyle():
     beatz()
@@ -104,12 +119,12 @@ def hypeIt():
     subprocess.run('say ' + random.choice(hype), shell=True)
     freestyle()
 
-@window.event
-def on_key_press(symbol, modifiers):
-    if symbol == key.A:
-        # r.terminate()
-        pyglet.app.exit()
-        print('exiting')
+# @window.event
+# def on_key_press(symbol, modifiers):
+#     if symbol == key.A:
+#         # r.terminate()
+#         pyglet.app.exit()
+#         print('exiting')
 
 
 if __name__ == "__main__":
