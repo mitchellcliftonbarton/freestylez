@@ -4,6 +4,7 @@ import os, sys, random, pyglet
 from random import shuffle
 from random import randint
 from threading import Timer
+import subprocess
 
 pyglet.options['audio'] = ('openal', 'silent')
 #rapperz
@@ -50,59 +51,6 @@ teams = ['yankees', 'dodgers', 'red sox', 'lakers', 'celtics', 'jazz', 'warriors
 
 wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, sports, fruits, veggies, art, landscape, mystical, cars, animals, thug, geo, cities, countries, money, colors, brands, shoes, bling, teams]
 
-# beatz
-# song2 = pyglet.media.load('beats/hard-2.mp3', streaming=False)
-# song3 = pyglet.media.load('beats/drop-2.mp3', streaming=False)
-song2 = pyglet.media.load('beats/breathe.mp3', streaming=False)
-song3 = pyglet.media.load('beats/everything.mp3', streaming=False)
-song4 = pyglet.media.load('beats/jazz.mp3')
-song5 = pyglet.media.load('beats/electric.mp3')
-song6 = pyglet.media.load('beats/preservation.mp3')
-song7 = pyglet.media.load('beats/88.mp3')
-song8 = pyglet.media.load('beats/93.mp3')
-song9 = pyglet.media.load('beats/cream.mp3')
-song10 = pyglet.media.load('beats/drop.mp3')
-song11 = pyglet.media.load('beats/far.mp3')
-song12 = pyglet.media.load('beats/knock.mp3')
-song13 = pyglet.media.load('beats/ny.mp3')
-song14 = pyglet.media.load('beats/ready.mp3')
-song15 = pyglet.media.load('beats/welcome.mp3')
-song16 = pyglet.media.load('beats/what.mp3')
-player = pyglet.media.Player()
-
-# Play beatz
-
-def beatz():
-    playlist = [song2, song3]
-    # playlist = [song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16]
-    shuffle(playlist)
-    player.queue(playlist[0])
-    # player.queue(playlist[1])
-    # player.queue(playlist[2])
-    # player.queue(playlist[3])
-    # player.queue(playlist[4])
-    # player.queue(playlist[5])
-    # player.queue(playlist[6])
-    # player.queue(playlist[7])
-    # player.queue(playlist[8])
-    # player.queue(playlist[9])
-    # player.queue(playlist[10])
-    # player.queue(playlist[11])
-    # player.queue(playlist[12])
-    # player.queue(playlist[13])
-    # player.queue(playlist[14])
-    player.play()
-
-
-# def on_player_eos():
-#     print('repeating')
-#     beatz()
-#
-#
-# player.on_player_eos = on_player_eos
-
-# rapping function
-
 barLen = list(range(1,10))
 
 # lead = random.choice(rapperz)
@@ -113,21 +61,12 @@ def rap():
     # rando1 = randint(0,4)
     bar = ' '.join(random.choice(wordz[randint(0,32)]) for _ in range(random.choice(barLen)))
     # os.system('say -v ' + lead + ' ' + bar)
-    os.system('say ' + bar)
+    subprocess.run('say ' + bar, shell=True)
     # print(bar)
     sys.stdout.flush()
     t = Timer(random.choice(timez), rap)
     t.start()
 
-def freestyle():
-    beatz()
-    t = Timer(1.5, rap)
-    t.start()
 
-def hypeIt():
-    # bar = ' '.join(random.choice(wordz[rando1]) for _ in range(random.choice(barLen)))
-    # os.system('say -v ' + lead + ' ' + random.choice(hype))
-    os.system('say ' + random.choice(hype))
-    freestyle()
-
-hypeIt()
+t = Timer(1.5, rap)
+t.start()
