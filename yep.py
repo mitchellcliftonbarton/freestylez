@@ -55,16 +55,42 @@ teams = ['yankees', 'dodgers', 'red sox', 'lakers', 'celtics', 'jazz', 'warriors
 wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, sports, fruits, veggies, art, landscape, mystical, cars, animals, thug, geo, cities, countries, money, colors, brands, shoes, bling, teams]
 
 
-song2 = pyglet.media.load('beats/knock.mp3', streaming=False)
-song12 = pyglet.media.load('beats/drop-2.mp3', streaming=False)
+song2 = pyglet.media.load('beats/hard-2.mp3', streaming=False)
+song3 = pyglet.media.load('beats/drop-2.mp3', streaming=False)
+song2 = pyglet.media.load('beats/breathe.mp3', streaming=False)
+song3 = pyglet.media.load('beats/everything.mp3', streaming=False)
+song4 = pyglet.media.load('beats/jazz.mp3', streaming=False)
+song5 = pyglet.media.load('beats/electric.mp3', streaming=False)
+song6 = pyglet.media.load('beats/preservation.mp3', streaming=False)
+song7 = pyglet.media.load('beats/88.mp3', streaming=False)
+song8 = pyglet.media.load('beats/93.mp3', streaming=False)
+song9 = pyglet.media.load('beats/cream.mp3', streaming=False)
+song10 = pyglet.media.load('beats/drop.mp3', streaming=False)
+song11 = pyglet.media.load('beats/far.mp3', streaming=False)
+song12 = pyglet.media.load('beats/knock.mp3', streaming=False)
+song13 = pyglet.media.load('beats/ny.mp3', streaming=False)
+song14 = pyglet.media.load('beats/ready.mp3', streaming=False)
+song15 = pyglet.media.load('beats/welcome.mp3', streaming=False)
+song16 = pyglet.media.load('beats/what.mp3', streaming=False)
 player = pyglet.media.Player()
 
 def beatz():
-    playlist = [song2, song12]
-    # playlist = [song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16]
+    playlist = [song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16]
     shuffle(playlist)
     player.queue(playlist[0])
     player.queue(playlist[1])
+    player.queue(playlist[2])
+    player.queue(playlist[3])
+    player.queue(playlist[4])
+    player.queue(playlist[5])
+    player.queue(playlist[6])
+    player.queue(playlist[7])
+    player.queue(playlist[8])
+    player.queue(playlist[9])
+    player.queue(playlist[10])
+    player.queue(playlist[11])
+    player.queue(playlist[13])
+    player.queue(playlist[14])
     player.play()
 
 def on_player_eos():
@@ -83,20 +109,20 @@ timez = [.5, .75, 1.0, 1.5, 2.0]
 
 def rap():
     t = Timer(random.choice(timez), rap)
-    @window.event
-    def on_key_press(symbol, modifiers):
-        if symbol == key.A:
-            r.terminate()
-            t.cancel()
-            print('exiting')
-            pyglet.app.exit()
-
-    @window.event
-    def on_close():
+    def close():
         r.terminate()
         t.cancel()
         print('exiting')
         pyglet.app.exit()
+
+    @window.event
+    def on_key_press(symbol, modifiers):
+        if symbol == key.A:
+            close()
+
+    @window.event
+    def on_close():
+        close()
 
     # rando1 = randint(0,4)
     bar = ' '.join(random.choice(wordz[randint(0,32)]) for _ in range(random.choice(barLen)))
