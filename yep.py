@@ -12,10 +12,10 @@ window.set_caption('F R E E S T Y L E Z')
 
 #rapperz
 
-# rapperz = ['Alex', 'Agnes', 'Kathy', 'Bruce', 'Fred', 'Junior', 'Princess', 'Vicki', 'Ralph', 'Victoria']
+rapperz = ['Alex ', 'Agnes ', 'Kathy ', 'Bruce ', 'Fred ', 'Junior ', 'Princess ', 'Vicki ', 'Ralph ', 'Victoria ']
 
 # Words to use in freestyle
-hype = ['about to break it down', 'about to drop some bars', 'lay down the beat', 'drop the beat', 'drop it', 'lets go', 'spin it', 'lay it down']
+hype = ['about to break it down', 'about to drop some bars', 'lay down the beat', 'drop the beat', 'drop it', 'lets go', 'spin it', 'lay it down', 'pass the mic']
 greetings = ['hello,', 'yo', 'yo,', 'what up', 'what up,', 'sup', 'sup', 'yep', 'hi', 'whats happening', 'whats happening,', 'whats up', 'whats up', 'yeah', 'yeah,', 'hey', 'hey,', 'uh', 'uh huh', 'yup']
 be = ['is', 'was', 'will be', 'is not', 'was not', 'will not be', 'will never be', 'never was', 'never is', 'always is', 'always will be', 'I am', 'I be', 'we be', 'they be']
 r1 = ['mic', 'like', 'spike', 'bike', 'pike', 'turnpike', 'ride', 'slide', 'tide', 'pie', 'my', 'cry', 'tie', 'sty', 'pry', 'dry']
@@ -102,36 +102,49 @@ player.push_handlers(on_player_eos)
 #### RAPPING STUFF #####
 
 barLen = list(range(1,10))
+swTm = [30.0, 45.0, 60.0, 20.0, 75.0, 80.0]
+timez = [.5, .75, 1.0, 1.5, 1.75]
+lead = random.choice(rapperz)
+barTimer = None
+r = None
 
-# lead = random.choice(rapperz)
+def close():
+    r.terminate()
+    rapperTimer.cancel()
+    barTimer.cancel()
+    print('exiting')
+    pyglet.app.exit()
 
-timez = [.5, .75, 1.0, 1.5, 2.0]
 
-def rap():
-    t = Timer(random.choice(timez), rap)
-    def close():
-        r.terminate()
-        t.cancel()
-        print('exiting')
-        pyglet.app.exit()
-
-    @window.event
-    def on_key_press(symbol, modifiers):
-        if symbol == key.A:
-            close()
-
-    @window.event
-    def on_close():
+@window.event
+def on_key_press(symbol, modifiers):
+    if symbol == key.A:
         close()
 
-    # rando1 = randint(0,4)
+@window.event
+def on_close():
+    close()
+
+def choozRapper():
+    global rapperTimer
+    rapperTimer = Timer(random.choice(swTm), choozRapper)
+    global lead
+    lead = random.choice(rapperz)
+    rapperTimer.start()
+
+rapperTimer = Timer(random.choice(swTm), choozRapper)
+rapperTimer.start()
+
+def rap():
+    global barTimer
+    barTimer = Timer(random.choice(timez), rap)
     bar = ' '.join(random.choice(wordz[randint(0,32)]) for _ in range(random.choice(barLen)))
-    # os.system('say -v ' + lead + ' ' + bar)
-    r = subprocess.Popen('say ' + bar, shell=True)
+    global r
+    r = subprocess.Popen('say -v ' + lead + bar, shell=True)
     r.wait()
     print(bar)
-    # sys.stdout.flush()
-    t.start()
+    sys.stdout.flush()
+    barTimer.start()
 
 def freestyle():
     beatz()
@@ -139,18 +152,8 @@ def freestyle():
     t.start()
 
 def hypeIt():
-    # bar = ' '.join(random.choice(wordz[rando1]) for _ in range(random.choice(barLen)))
-    # os.system('say -v ' + lead + ' ' + random.choice(hype))
-    # os.system('say ' + random.choice(hype))
     subprocess.run('say ' + random.choice(hype), shell=True)
     freestyle()
-
-# @window.event
-# def on_key_press(symbol, modifiers):
-#     if symbol == key.A:
-#         # r.terminate()
-#         pyglet.app.exit()
-#         print('exiting')
 
 
 if __name__ == "__main__":
