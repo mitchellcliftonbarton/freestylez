@@ -3,7 +3,6 @@ from random import shuffle
 from random import randint
 from threading import Timer
 from pyglet.window import key
-import signal
 import subprocess
 
 pyglet.options['audio'] = ('openal', 'silent')
@@ -104,6 +103,7 @@ player.push_handlers(on_player_eos)
 barLen = list(range(1,10))
 swTm = [30.0, 45.0, 60.0, 20.0, 75.0, 80.0]
 timez = [.5, .75, 1.0, 1.5, 1.75]
+rates = ['175', '175', '100', '50', '175', '210', '300', '150', '70', '175', '200', '60', '175', '175', '175']
 lead = random.choice(rapperz)
 barTimer = None
 r = None
@@ -140,7 +140,7 @@ def rap():
     barTimer = Timer(random.choice(timez), rap)
     bar = ' '.join(random.choice(wordz[randint(0,32)]) for _ in range(random.choice(barLen)))
     global r
-    r = subprocess.Popen('say -v ' + lead + bar, shell=True)
+    r = subprocess.Popen('say -v ' + lead + '-r ' + random.choice(rates) + ' ' + bar, shell=True)
     r.wait()
     print(bar)
     sys.stdout.flush()
