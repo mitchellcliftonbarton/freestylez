@@ -11,7 +11,7 @@ window.set_caption('F R E E S T Y L E Z')
 
 #rapperz
 
-rapperz = ['Alex ', 'Agnes ', 'Kathy ', 'Bruce ', 'Fred ', 'Junior ', 'Princess ', 'Vicki ', 'Ralph ', 'Victoria ']
+rapperz = ['Alex ', 'Agnes ', 'Kathy ', 'Bruce ', 'Fred ', 'Junior ', 'Princess ', 'Vicki ', 'Ralph ', 'Victoria ', 'Albert ', 'Cellos ', 'Deranged ', 'Zarvox ', 'Trinoids ']
 
 # Words to use in freestyle
 hype = ['about to break it down', 'about to drop some bars', 'lay down the beat', 'drop the beat', 'drop it', 'lets go', 'spin it', 'lay it down', 'pass the mic']
@@ -50,8 +50,13 @@ brands = ['google', 'facebook', 'twitter', 'nike', 'snapchat', 'insta', 'tumblr'
 shoes = ['air max', 'spizike', 'air force one', 'dunks', 'high tops', 'slip ons', 'sandals', 'foam posite', 'superstars', 'nikes', 'jordans']
 bling = ['chain', 'necklace', 'two finger ring', 'piece', 'bling', 'jewels', 'watch', 'accessories', 'snap back', 'fitted', 'belt buckle', 'pin', 'rope']
 teams = ['yankees', 'dodgers', 'red sox', 'lakers', 'celtics', 'jazz', 'warriors', 'sonics', 'giants', 'mets', 'broncos', 'raiders', 'patriots', 'redskins', 'bills', 'cowboys']
+mrthug = ['shorty', 'shawty', 'grill', 'dough', 'dime', 'bread', 'hustle', 'O G', 'beef', 'street cred', 'rep', 'ill', 'afro', 'cray']
+marks = ['squiggle', 'circle', 'square', 'rectangle', 'pentagon', 'octogon', 'line', 'splotch', 'stain', 'cube', 'pyramid', 'box', 'crate']
 
-wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, sports, fruits, veggies, art, landscape, mystical, cars, animals, thug, geo, cities, countries, money, colors, brands, shoes, bling, teams]
+wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
+         sports, fruits, veggies, art, landscape, mystical, cars, animals, thug,
+         geo, cities, countries, money, colors, brands, shoes, bling, teams, mrthug,
+         marks]
 
 
 song2 = pyglet.media.load('beats/hard-2.mp3', streaming=False)
@@ -115,7 +120,6 @@ def close():
     print('exiting')
     pyglet.app.exit()
 
-
 @window.event
 def on_key_press(symbol, modifiers):
     if symbol == key.A:
@@ -138,7 +142,7 @@ rapperTimer.start()
 def rap():
     global barTimer
     barTimer = Timer(random.choice(timez), rap)
-    bar = ' '.join(random.choice(wordz[randint(0,32)]) for _ in range(random.choice(barLen)))
+    bar = ' '.join(random.choice(wordz[randint(0,34)]) for _ in range(random.choice(barLen)))
     global r
     r = subprocess.Popen('say -v ' + lead + '-r ' + random.choice(rates) + ' ' + bar, shell=True)
     r.wait()
