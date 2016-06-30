@@ -5,15 +5,19 @@ from threading import Timer
 from pyglet.window import key
 import subprocess
 
+# basic app info
+
 pyglet.options['audio'] = ('openal', 'silent')
-window = pyglet.window.Window()
+window = pyglet.window.Window(width=640, height=640)
 window.set_caption('F R E E S T Y L E Z')
 
-#rapperz
+# rapperz
 
-rapperz = ['Alex ', 'Agnes ', 'Kathy ', 'Bruce ', 'Fred ', 'Junior ', 'Princess ', 'Vicki ', 'Ralph ', 'Victoria ', 'Albert ', 'Cellos ', 'Deranged ', 'Zarvox ', 'Trinoids ']
+rapperz = ['Alex ', 'Agnes ', 'Kathy ', 'Bruce ', 'Fred ', 'Junior ', 'Princess ',
+           'Vicki ', 'Ralph ', 'Victoria ']
 
 # Words to use in freestyle
+
 hype = ['about to break it down', 'about to drop some bars', 'lay down the beat', 'drop the beat', 'drop it', 'lets go', 'spin it', 'lay it down', 'pass the mic']
 greetings = ['hello,', 'yo', 'yo,', 'what up', 'what up,', 'sup', 'sup', 'yep', 'hi', 'whats happening', 'whats happening,', 'whats up', 'whats up', 'yeah', 'yeah,', 'hey', 'hey,', 'uh', 'uh huh', 'yup']
 be = ['is', 'was', 'will be', 'is not', 'was not', 'will not be', 'will never be', 'never was', 'never is', 'always is', 'always will be', 'I am', 'I be', 'we be', 'they be']
@@ -32,6 +36,7 @@ r12 = ['rollin', 'bowlin', 'patrol', 'rovin', 'roving', 'rolling', 'riding', 'cr
 r13 = ['ballin', 'balling', 'balla', 'calling', 'callin', 'stallin', 'crawling', 'impala', 'falling', 'apalling', 'shot callin', 'folly', 'trolly']
 
 # themes
+
 sports = ['ball', 'dunk', 'shoot', 'sports', 'basket', 'basketball', 'baseball', 'football', 'quarterback', 'coach', 'player', 'game', 'points', 'score', 'play', 'playing', 'soccer']
 fruits = ['banana', 'orange', 'apple', 'pineapple', 'tangerine', 'melon', 'watermelon', 'grape', 'fruit', 'grapefruit', 'lemon', 'lime', 'cherry', 'strawberry', 'raspberry', 'blueberry']
 veggies = ['veggies', 'vegetable', 'carrot', 'tomato', 'lettuce', 'broccoli', 'asparagus', 'pepper', 'mushroom']
@@ -52,12 +57,14 @@ bling = ['chain', 'necklace', 'two finger ring', 'piece', 'bling', 'jewels', 'wa
 teams = ['yankees', 'dodgers', 'red sox', 'lakers', 'celtics', 'jazz', 'warriors', 'sonics', 'giants', 'mets', 'broncos', 'raiders', 'patriots', 'redskins', 'bills', 'cowboys']
 mrthug = ['shorty', 'shawty', 'grill', 'dough', 'dime', 'bread', 'hustle', 'O G', 'beef', 'street cred', 'rep', 'ill', 'afro', 'cray']
 marks = ['squiggle', 'circle', 'square', 'rectangle', 'pentagon', 'octogon', 'line', 'splotch', 'stain', 'cube', 'pyramid', 'box', 'crate']
+chips = ['doritos', 'cheetos', 'lays', 'sour cream and onion', 'barbecue', 'tortilla chips', 'fritos', 'potato chips', 'cheddar', 'salt and vinegar', 'spicy nacho', 'nacho']
 
 wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
          sports, fruits, veggies, art, landscape, mystical, cars, animals, thug,
          geo, cities, countries, money, colors, brands, shoes, bling, teams, mrthug,
-         marks]
+         marks, chips]
 
+# songs
 
 song2 = pyglet.media.load('beats/hard-2.mp3', streaming=False)
 song3 = pyglet.media.load('beats/drop-2.mp3', streaming=False)
@@ -78,6 +85,8 @@ song15 = pyglet.media.load('beats/welcome.mp3', streaming=False)
 song16 = pyglet.media.load('beats/what.mp3', streaming=False)
 player = pyglet.media.Player()
 
+# function that shuffles and plays songs
+
 def beatz():
     playlist = [song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16]
     shuffle(playlist)
@@ -97,13 +106,15 @@ def beatz():
     player.queue(playlist[14])
     player.play()
 
+# repeat event for beatz function
+
 def on_player_eos():
     print('repeating')
     beatz()
 
 player.push_handlers(on_player_eos)
 
-#### RAPPING STUFF #####
+# rapping stuff
 
 barLen = list(range(1,10))
 swTm = [30.0, 45.0, 60.0, 20.0, 75.0, 80.0]
@@ -112,6 +123,8 @@ rates = ['175', '175', '100', '50', '175', '210', '300', '150', '70', '175', '20
 lead = random.choice(rapperz)
 barTimer = None
 r = None
+
+# closing event function
 
 def close():
     r.terminate()
@@ -129,6 +142,8 @@ def on_key_press(symbol, modifiers):
 def on_close():
     close()
 
+# choosing rapper function
+
 def choozRapper():
     global rapperTimer
     rapperTimer = Timer(random.choice(swTm), choozRapper)
@@ -139,10 +154,12 @@ def choozRapper():
 rapperTimer = Timer(random.choice(swTm), choozRapper)
 rapperTimer.start()
 
+# rapping function
+
 def rap():
     global barTimer
     barTimer = Timer(random.choice(timez), rap)
-    bar = ' '.join(random.choice(wordz[randint(0,34)]) for _ in range(random.choice(barLen)))
+    bar = ' '.join(random.choice(wordz[randint(0,35)]) for _ in range(random.choice(barLen)))
     global r
     r = subprocess.Popen('say -v ' + lead + '-r ' + random.choice(rates) + ' ' + bar, shell=True)
     r.wait()
