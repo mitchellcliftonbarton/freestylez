@@ -45,7 +45,7 @@ landscape = ['river', 'mountain', 'plain', 'hill', 'lake', 'stream', 'rock', 'tr
 mystical = ['dragon', 'werewolf', 'wizard', 'godzilla', 'zombie', 'witch', 'dinosaur', 't rex', 'monster', 'alien', 'u f o', 'lifeform']
 cars = ['audi', 'porsche', 'benz', 'mercedes', 'land rover', 'range rover', 'ferrari', 'chevy', 'subaru', 'race car', 'dragster']
 animals = ['monkey', 'aardvark', 'elephant', 'tiger', 'lion', 'gazelle', 'eagle', 'spider', 'bug', 'bird', 'fish', 'shark', 'whale', 'gorilla']
-thug = ['boss', 'old school', 'bawse', 'gangsta', 'fly', 'amigo', 'homy', 'friend', 'hero', 'champion', 'dawg', 'bro', 'brother', 'sister', 'mister', 'pal', 'dude']
+thug = ['boss', 'old school', 'bawse', 'gangsta', 'fly', 'amigo', 'homy', 'friend', 'hero', 'champion', 'dawg', 'bro', 'brother', 'sister', 'mister', 'pal', 'dude', 'unstoppable']
 geo = ['USA', 'south america', 'north america', 'canada', 'mexico', 'chile', 'europe', 'africa', 'asia', 'polynesia', 'china', 'antarctica', 'states', 'region', 'country', 'city', 'town']
 cities = ['salt lake', 'LA', 'los angeles', 'new york', 'NY', 'atlanta', 'chicago', 'toronto', 'tokyo', 'london', 'madrid', 'rome', 'berlin', 'sao paolo', 'seattle', 'san fran', 'paris', 'egypt', 'hong kong']
 countries = ['united states', 'england', 'italy', 'france', 'argentina', 'germany', 'japan', 'korea', 'new zealand', 'australia', 'russia', 'south africa', 'ghana', 'colombia', 'brazil']
@@ -58,11 +58,12 @@ teams = ['yankees', 'dodgers', 'red sox', 'lakers', 'celtics', 'jazz', 'warriors
 mrthug = ['shorty', 'shawty', 'grill', 'dough', 'dime', 'bread', 'hustle', 'O G', 'beef', 'street cred', 'rep', 'ill', 'afro', 'cray']
 marks = ['squiggle', 'circle', 'square', 'rectangle', 'pentagon', 'octogon', 'line', 'splotch', 'stain', 'cube', 'pyramid', 'box', 'crate']
 chips = ['doritos', 'cheetos', 'lays', 'sour cream and onion', 'barbecue', 'tortilla chips', 'fritos', 'potato chips', 'cheddar', 'salt and vinegar', 'spicy nacho', 'nacho']
+mrp = ['got money', 'got cheese', 'bling bling', 'gold chain', 'gold and a pager', 'dont mess with me', 'i got it locked down', 'so fresh', 'so clean', 'i got it on lockdown', 'you cant believe this', 'half man half amazing']
 
 wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
          sports, fruits, veggies, art, landscape, mystical, cars, animals, thug,
          geo, cities, countries, money, colors, brands, shoes, bling, teams, mrthug,
-         marks, chips]
+         marks, chips, mrp]
 
 # songs
 
@@ -159,7 +160,7 @@ rapperTimer.start()
 def rap():
     global barTimer
     barTimer = Timer(random.choice(timez), rap)
-    bar = ' '.join(random.choice(wordz[randint(0,35)]) for _ in range(random.choice(barLen)))
+    bar = ' '.join(random.choice(wordz[randint(0,36)]) for _ in range(random.choice(barLen)))
     global r
     r = subprocess.Popen('say -v ' + lead + '-r ' + random.choice(rates) + ' ' + bar, shell=True)
     r.wait()
