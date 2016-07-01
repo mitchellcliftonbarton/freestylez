@@ -37,7 +37,7 @@ r13 = ['ballin', 'balling', 'balla', 'calling', 'callin', 'stallin', 'crawling',
 
 # themes
 
-sports = ['ball', 'dunk', 'shoot', 'sports', 'basket', 'basketball', 'baseball', 'football', 'quarterback', 'coach', 'player', 'game', 'points', 'score', 'play', 'playing', 'soccer']
+sports = ['ball', 'dunk', 'shoot', 'sports', 'basket', 'basketball', 'baseball', 'football', 'quarterback', 'coach', 'player', 'game', 'points', 'score', 'play', 'playing', 'soccer', 'slam dunk']
 fruits = ['banana', 'orange', 'apple', 'pineapple', 'tangerine', 'melon', 'watermelon', 'grape', 'fruit', 'grapefruit', 'lemon', 'lime', 'cherry', 'strawberry', 'raspberry', 'blueberry']
 veggies = ['veggies', 'vegetable', 'carrot', 'tomato', 'lettuce', 'broccoli', 'asparagus', 'pepper', 'mushroom']
 art = ['paint', 'paper', 'canvas', 'pen', 'pencil', 'collage', 'collab', 'piece', 'art', 'photo', 'photograph']
@@ -59,11 +59,15 @@ mrthug = ['shorty', 'shawty', 'grill', 'dough', 'dime', 'bread', 'hustle', 'O G'
 marks = ['squiggle', 'circle', 'square', 'rectangle', 'pentagon', 'octogon', 'line', 'splotch', 'stain', 'cube', 'pyramid', 'box', 'crate']
 chips = ['doritos', 'cheetos', 'lays', 'sour cream and onion', 'barbecue', 'tortilla chips', 'fritos', 'potato chips', 'cheddar', 'salt and vinegar', 'spicy nacho', 'nacho']
 mrp = ['got money', 'got cheese', 'bling bling', 'gold chain', 'gold and a pager', 'dont mess with me', 'i got it locked down', 'so fresh', 'so clean', 'i got it on lockdown', 'you cant believe this', 'half man half amazing']
+days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'party', 'party time', 'hard in the paint', 'dance party', 'week', 'year', 'month', 'birthday']
+months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+exp = ['you wouldnt believe', 'cant compete', 'cant believe it', 'you better believe it', 'ahh yeahh', 'oh yeah', 'thats right', 'how I do', 'dont trip', 'on point', 'yes sir']
+mrsports = ['pass', 'give and go', 'overlap', 'run', 'i got hops', 'jumping', 'layup', 'three pointer', 'jumpshot', 'fade away', 'buzzer beater', 'underdog', 'rainbow', 'home run', 'ground rule double']
 
 wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
          sports, fruits, veggies, art, landscape, mystical, cars, animals, thug,
          geo, cities, countries, money, colors, brands, shoes, bling, teams, mrthug,
-         marks, chips, mrp]
+         marks, chips, mrp, days, months, exp, mrsports]
 
 # songs
 
@@ -160,7 +164,7 @@ rapperTimer.start()
 def rap():
     global barTimer
     barTimer = Timer(random.choice(timez), rap)
-    bar = ' '.join(random.choice(wordz[randint(0,36)]) for _ in range(random.choice(barLen)))
+    bar = ' '.join(random.choice(wordz[randint(0,40)]) for _ in range(random.choice(barLen)))
     global r
     r = subprocess.Popen('say -v ' + lead + '-r ' + random.choice(rates) + ' ' + bar, shell=True)
     r.wait()
