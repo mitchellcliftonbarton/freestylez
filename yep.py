@@ -49,20 +49,22 @@ thug = ['boss', 'old school', 'bawse', 'gangsta', 'fly', 'amigo', 'homy', 'frien
 geo = ['USA', 'south america', 'north america', 'canada', 'mexico', 'chile', 'europe', 'africa', 'asia', 'polynesia', 'china', 'antarctica', 'states', 'region', 'country', 'city', 'town']
 cities = ['salt lake', 'LA', 'los angeles', 'new york', 'NY', 'atlanta', 'chicago', 'toronto', 'tokyo', 'london', 'madrid', 'rome', 'berlin', 'sao paolo', 'seattle', 'san fran', 'paris', 'egypt', 'hong kong']
 countries = ['united states', 'england', 'italy', 'france', 'argentina', 'germany', 'japan', 'korea', 'new zealand', 'australia', 'russia', 'south africa', 'ghana', 'colombia', 'brazil']
-money = ['dollar', 'dollar bills', 'cash', 'coins', 'cents', 'pounds', 'euros', 'green', 'yen', 'pesos', 'benjamins', 'franklins', 'millions', 'mill', 'paper']
+money = ['dollar', 'dollar bills', 'cash', 'yo', 'coins', 'cents', 'pounds', 'euros', 'green', 'yen', 'pesos', 'benjamins', 'franklins', 'millions', 'mill', 'paper']
 colors = ['red', 'yellow', 'green', 'blue', 'purple', 'white', 'black', 'brown', 'orange', 'teal', 'burnt siena', 'yellow ochre', 'gray', 'navy', 'gold', 'silver', 'platinum', 'metallic', 'flourescent']
 brands = ['google', 'facebook', 'twitter', 'nike', 'snapchat', 'insta', 'tumblr', 'adidas', 'jordan', 'supreme', 'undefeated', 'hundreds', 'vans', 'new era', 'levis', 'uni qlo', 'bape', 'ice cream', 'billionaire boys club']
 shoes = ['air max', 'spizike', 'air force one', 'dunks', 'high tops', 'slip ons', 'sandals', 'foam posite', 'superstars', 'nikes', 'jordans']
 bling = ['chain', 'necklace', 'two finger ring', 'piece', 'bling', 'jewels', 'watch', 'accessories', 'snap back', 'fitted', 'belt buckle', 'pin', 'rope']
-teams = ['yankees', 'dodgers', 'red sox', 'lakers', 'celtics', 'jazz', 'warriors', 'sonics', 'giants', 'mets', 'broncos', 'raiders', 'patriots', 'redskins', 'bills', 'cowboys']
+teams = ['yankees', 'dodgers', 'red sox', 'lakers', 'yo', 'celtics', 'jazz', 'warriors', 'sonics', 'giants', 'mets', 'broncos', 'raiders', 'patriots', 'redskins', 'bills', 'cowboys']
 mrthug = ['shorty', 'shawty', 'grill', 'dough', 'dime', 'bread', 'hustle', 'O G', 'beef', 'street cred', 'rep', 'ill', 'afro', 'cray']
 marks = ['squiggle', 'circle', 'square', 'rectangle', 'pentagon', 'octogon', 'line', 'splotch', 'stain', 'cube', 'pyramid', 'box', 'crate']
 chips = ['doritos', 'cheetos', 'lays', 'sour cream and onion', 'barbecue', 'tortilla chips', 'fritos', 'potato chips', 'cheddar', 'salt and vinegar', 'spicy nacho', 'nacho']
-mrp = ['got money', 'got cheese', 'bling bling', 'gold chain', 'gold and a pager', 'dont mess with me', 'i got it locked down', 'so fresh', 'so clean', 'i got it on lockdown', 'you cant believe this', 'half man half amazing']
+mrp = ['got money', 'got cheese', 'bling bling', 'yo', 'gold chain', 'gold and a pager', 'dont mess with me', 'i got it locked down', 'so fresh', 'so clean', 'i got it on lockdown', 'you cant believe this', 'half man half amazing']
 days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'party', 'party time', 'hard in the paint', 'dance party', 'week', 'year', 'month', 'birthday']
 months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 exp = ['you wouldnt believe', 'cant compete', 'cant believe it', 'you better believe it', 'ahh yeahh', 'oh yeah', 'thats right', 'how I do', 'dont trip', 'on point', 'yes sir']
 mrsports = ['pass', 'give and go', 'overlap', 'run', 'i got hops', 'jumping', 'layup', 'three pointer', 'jumpshot', 'fade away', 'buzzer beater', 'underdog', 'rainbow', 'home run', 'ground rule double']
+comp = ['im like', 'im like a', 'like a', 'i be like', 'like im', 'like im gonna', 'comparable to a', 'im all like', 'i be all', 'like its gonna', 'like its a', 'its like']
+disgust = ['yuck', 'ew', 'gross', 'phew', 'sick', 'nasty', 'sick nasty', 'disgusting', 'stinky', 'smelly', 'dirty', 'yo', 'yeahh man']
 
 wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
          sports, fruits, veggies, art, landscape, mystical, cars, animals, thug,
@@ -71,24 +73,22 @@ wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
 
 # songs
 
-song2 = pyglet.media.load('beats/hard-2.mp3', streaming=False)
-song3 = pyglet.media.load('beats/drop-2.mp3', streaming=False)
-song2 = pyglet.media.load('beats/breathe.mp3', streaming=False)
-song3 = pyglet.media.load('beats/everything.mp3', streaming=False)
-song4 = pyglet.media.load('beats/jazz.mp3', streaming=False)
-song5 = pyglet.media.load('beats/electric.mp3', streaming=False)
-song6 = pyglet.media.load('beats/preservation.mp3', streaming=False)
-song7 = pyglet.media.load('beats/88.mp3', streaming=False)
-song8 = pyglet.media.load('beats/93.mp3', streaming=False)
-song9 = pyglet.media.load('beats/cream.mp3', streaming=False)
-song10 = pyglet.media.load('beats/drop.mp3', streaming=False)
-song11 = pyglet.media.load('beats/far.mp3', streaming=False)
-song12 = pyglet.media.load('beats/knock.mp3', streaming=False)
-song13 = pyglet.media.load('beats/ny.mp3', streaming=False)
-song14 = pyglet.media.load('beats/ready.mp3', streaming=False)
-song15 = pyglet.media.load('beats/welcome.mp3', streaming=False)
-song16 = pyglet.media.load('beats/what.mp3', streaming=False)
-song17 = pyglet.media.load('beats/saliva.mp3', streaming=False)
+song2 = pyglet.resource.media('beats/breathe.mp3', streaming=False)
+song3 = pyglet.resource.media('beats/everything.mp3', streaming=False)
+song4 = pyglet.resource.media('beats/jazz.mp3', streaming=False)
+song5 = pyglet.resource.media('beats/electric.mp3', streaming=False)
+song6 = pyglet.resource.media('beats/preservation.mp3', streaming=False)
+song7 = pyglet.resource.media('beats/88.mp3', streaming=False)
+song8 = pyglet.resource.media('beats/93.mp3', streaming=False)
+song9 = pyglet.resource.media('beats/cream.mp3', streaming=False)
+song10 = pyglet.resource.media('beats/drop.mp3', streaming=False)
+song11 = pyglet.resource.media('beats/far.mp3', streaming=False)
+song12 = pyglet.resource.media('beats/knock.mp3', streaming=False)
+song13 = pyglet.resource.media('beats/ny.mp3', streaming=False)
+song14 = pyglet.resource.media('beats/ready.mp3', streaming=False)
+song15 = pyglet.resource.media('beats/welcome.mp3', streaming=False)
+song16 = pyglet.resource.media('beats/what.mp3', streaming=False)
+song17 = pyglet.resource.media('beats/saliva.mp3', streaming=False)
 player = pyglet.media.Player()
 
 # function that shuffles and plays songs
