@@ -65,11 +65,27 @@ exp = ['you wouldnt believe', 'cant compete', 'cant believe it', 'you better bel
 mrsports = ['pass', 'give and go', 'overlap', 'run', 'i got hops', 'jumping', 'layup', 'three pointer', 'jumpshot', 'fade away', 'buzzer beater', 'underdog', 'rainbow', 'home run', 'ground rule double']
 comp = ['im like', 'im like a', 'like a', 'i be like', 'like im', 'like im gonna', 'comparable to a', 'im all like', 'i be all', 'like its gonna', 'like its a', 'its like']
 disgust = ['yuck', 'ew', 'gross', 'phew', 'sick', 'nasty', 'sick nasty', 'disgusting', 'stinky', 'smelly', 'dirty', 'yo', 'yeahh man']
+bounce = ['bounce with it', 'let it bump', 'let it bounce', 'stacking money', 'put your hands up', 'if you feeling the beat', 'bounce with the beat', 'put your hands up in the sky', 'get your hands up']
+bounce2 = ['if you dig it', 'what you saying', 'let me know', 'if you feel the vibe', 'listen up', 'listen close', 'hear me', 'started from the bottom', 'can you dig it', 'can i kick it', 'kicking it', 'made it to the top']
+
+# random things
+
+gadgets = ['helicopter', 'airplane', 'up high', 'in the sky', 'flying', 'submarine', 'truck', 'motorcycle', 'rocket', 'spaceship', 'fighter jet', 'tank', 'bicycle', 'trike']
+clothes = ['slippers', 'sweats', 'polo', 'button up', 'dress', 'skirt', 't shirt', 'tall tee', 'linen', 'cotton blend', 'socks', 'cleats', 'boots', 'bracelet', 'belt']
+js = ['jordan ones', 'jordan twos', 'jordan threes', 'jordan fours', 'jordan fives', 'jordan sixes', 'jordan sevens', 'jordan eights', 'jordan nines', 'jordan tens', 'jordan elevens', 'jordan twelves', 'jordan thirteens', 'jordan fourteens']
+jstype = ['true blue', 'elephant print', 'infared', 'original', 'on ice', 'mint condition', 'retro', 'colorway', 'deadstock', 'shrink wrapped', 'flight club', 'sneakers', 'sneaker head']
+sneak = ['aglets', 'beaters', 'hype beast', 'flip flop', 'hype', 'jumpman', 'lows', 'mids', 'air jordan', 'player edition', 'sample', 'boutique', 'style', 'mags']
+mexp = ['for real', 'for sure', 'of course', 'there it is', 'laid it down', 'seriously', 'are you kidding', 'for serious', 'dont mess', 'dont hate', 'haters', 'brush your shoulders off']
+yuup = ['how gangster is that', 'limited quantity', 'wack', 'thats wack', 'thats dope', 'dope', 'rock it', 'lame', 'rope', 'posers', 'posters', 'hating', 'make it']
+yuup2 = ['swag', 'swagger', 'steeze', 'cool', 'hard to believe', 'got game', 'graphics in your fade', 'flat top', 'loser', 'mustache', 'beard', 'sideburns', 'ear ring']
+rapM = ['bars', 'on the beat', 'bass line', 'chorus', 'lines', 'rhymes', 'smooth flow', 'flow', 'rhythm', 'tempo', 'poet', 'poetry', 'poetic justice', 'space jam']
+
 
 wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
          sports, fruits, veggies, art, landscape, mystical, cars, animals, thug,
          geo, cities, countries, money, colors, brands, shoes, bling, teams, mrthug,
-         marks, chips, mrp, days, months, exp, mrsports]
+         marks, chips, mrp, days, months, exp, mrsports, comp, disgust, bounce, bounce2,
+         gadgets, clothes, js, jstype, sneak, mexp, yuup, yuup2, rapM]
 
 # songs
 
@@ -166,7 +182,7 @@ rapperTimer.start()
 def rap():
     global barTimer
     barTimer = Timer(random.choice(timez), rap)
-    bar = ' '.join(random.choice(wordz[randint(0,40)]) for _ in range(random.choice(barLen)))
+    bar = ' '.join(random.choice(wordz[randint(0,55)]) for _ in range(random.choice(barLen)))
     global r
     r = subprocess.Popen('say -v ' + lead + '-r ' + random.choice(rates) + ' ' + bar, shell=True)
     r.wait()
