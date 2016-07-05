@@ -79,13 +79,18 @@ mexp = ['for real', 'for sure', 'of course', 'there it is', 'laid it down', 'ser
 yuup = ['how gangster is that', 'limited quantity', 'wack', 'thats wack', 'thats dope', 'dope', 'rock it', 'lame', 'rope', 'posers', 'posters', 'hating', 'make it']
 yuup2 = ['swag', 'swagger', 'steeze', 'cool', 'hard to believe', 'got game', 'graphics in your fade', 'flat top', 'loser', 'mustache', 'beard', 'sideburns', 'ear ring']
 rapM = ['bars', 'on the beat', 'bass line', 'chorus', 'lines', 'rhymes', 'smooth flow', 'flow', 'rhythm', 'tempo', 'poet', 'poetry', 'poetic justice', 'space jam']
-
+masfoods = ['salad', 'steak', 'bacon', 'eggs', 'almonds', 'cashews', 'berry', 'candy', 'chocolate', 'peanut butter', 'food', 'treats']
+word = ['word up', 'in the hood', 'from the hood', 'hood forever', 'cops', 'neighborhood', 'broadway', 'courtside', 'concrete jungle', 'melting pot', 'hip hop']
+word2 = ['gamble', 'got that cash', 'cash under the mattress', 'cars', 'gang', 'crew', 'holla', 'holla back', 'rap star', 'ball player', 'limelight']
+blah = ['water bottle', 'butter', 'cash money', 'pringles', 'gym shorts', 'necklace', 'ring', 'rock on', 'so sick', 'holla at me', 'bro']
+connect = ['its a', 'feeling like a', 'acting like a', 'got rhymes like a', 'got rhymes like', 'got skills like', 'so sick like im', 'you can call me', 'you can say im']
 
 wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
          sports, fruits, veggies, art, landscape, mystical, cars, animals, thug,
          geo, cities, countries, money, colors, brands, shoes, bling, teams, mrthug,
          marks, chips, mrp, days, months, exp, mrsports, comp, disgust, bounce, bounce2,
-         gadgets, clothes, js, jstype, sneak, mexp, yuup, yuup2, rapM]
+         gadgets, clothes, js, jstype, sneak, mexp, yuup, yuup2, rapM, masfoods, word, word2,
+         blah, connect]
 
 # songs
 
@@ -182,7 +187,7 @@ rapperTimer.start()
 def rap():
     global barTimer
     barTimer = Timer(random.choice(timez), rap)
-    bar = ' '.join(random.choice(wordz[randint(0,55)]) for _ in range(random.choice(barLen)))
+    bar = ' '.join(random.choice(wordz[randint(0,58)]) for _ in range(random.choice(barLen)))
     global r
     r = subprocess.Popen('say -v ' + lead + '-r ' + random.choice(rates) + ' ' + bar, shell=True)
     r.wait()
