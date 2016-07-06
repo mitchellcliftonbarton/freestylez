@@ -10,6 +10,14 @@ import subprocess
 pyglet.options['audio'] = ('openal', 'silent')
 window = pyglet.window.Window(width=640, height=640)
 window.set_caption('F R E E S T Y L E Z')
+pic1 = pyglet.resource.image('grad.jpg')
+pic2 = pyglet.resource.image('grad-2.jpg')
+picz = [pic1, pic2]
+
+@window.event
+def on_draw():
+    window.clear()
+    random.choice(picz).blit(0, 0)
 
 # rapperz
 
@@ -165,6 +173,9 @@ def close():
 def on_key_press(symbol, modifiers):
     if symbol == key.A:
         close()
+    elif symbol == key.N:
+        window.clear()
+        random.choice(picz).blit(0, 0)
 
 @window.event
 def on_close():
