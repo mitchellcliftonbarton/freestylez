@@ -19,10 +19,11 @@ picTimer = None
 
 counter = 0
 
-@window.event
-def on_draw():
+def next():
     window.clear()
     global counter
+    picTimer = Timer(10.0, next)
+    picTimer.start()
 
     if counter > 2:
         counter = 0
@@ -31,6 +32,10 @@ def on_draw():
     else:
         picz[counter].blit(0,0)
         counter = counter + 1
+
+@window.event
+def on_draw():
+    next()
 
 # rapperz
 
@@ -177,6 +182,7 @@ r = None
 
 def close():
     r.terminate()
+    picTimer.cancel()
     rapperTimer.cancel()
     barTimer.cancel()
     print('exiting')
