@@ -12,12 +12,25 @@ window = pyglet.window.Window(width=640, height=640)
 window.set_caption('F R E E S T Y L E Z')
 pic1 = pyglet.resource.image('grad.jpg')
 pic2 = pyglet.resource.image('grad-2.jpg')
-picz = [pic1, pic2]
+pic3 = pyglet.resource.image('grad-3.jpg')
+picz = [pic1, pic2, pic3]
+shuffle(picz)
+picTimer = None
+
+counter = 0
 
 @window.event
 def on_draw():
     window.clear()
-    random.choice(picz).blit(0, 0)
+    global counter
+
+    if counter > 2:
+        counter = 0
+        picz[counter].blit(0,0)
+        counter = counter + 1
+    else:
+        picz[counter].blit(0,0)
+        counter = counter + 1
 
 # rapperz
 
@@ -174,8 +187,8 @@ def on_key_press(symbol, modifiers):
     if symbol == key.A:
         close()
     elif symbol == key.N:
-        window.clear()
-        random.choice(picz).blit(0, 0)
+        pass
+
 
 @window.event
 def on_close():
