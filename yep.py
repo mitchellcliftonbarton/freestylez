@@ -19,12 +19,9 @@ picTimer = None
 
 counter = 0
 
-def next():
+def nextPic(dt):
     window.clear()
     global counter
-    picTimer = Timer(10.0, next)
-    picTimer.start()
-
     if counter > 2:
         counter = 0
         picz[counter].blit(0,0)
@@ -33,9 +30,10 @@ def next():
         picz[counter].blit(0,0)
         counter = counter + 1
 
-@window.event
-def on_draw():
-    next()
+window.clear()
+picz[counter].blit(0,0)
+pyglet.clock.schedule_interval(nextPic, 7.0)
+counter = counter + 1
 
 # rapperz
 
@@ -182,7 +180,6 @@ r = None
 
 def close():
     r.terminate()
-    picTimer.cancel()
     rapperTimer.cancel()
     barTimer.cancel()
     print('exiting')
@@ -192,9 +189,10 @@ def close():
 def on_key_press(symbol, modifiers):
     if symbol == key.A:
         close()
-    elif symbol == key.N:
-        pass
-
+    else:
+        pyglet.clock.unschedule(nextPic)
+        pyglet.clock.schedule_interval(nextPic, 7.0)
+        nextPic(None)
 
 @window.event
 def on_close():
