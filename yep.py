@@ -9,6 +9,7 @@ import subprocess
 
 pyglet.options['audio'] = ('openal', 'silent')
 window = pyglet.window.Window(width=640, height=640)
+window.activate()
 window.set_caption('F R E E S T Y L E Z')
 pic1 = pyglet.resource.image('grad.jpg')
 pic2 = pyglet.resource.image('grad-2.jpg')
@@ -34,6 +35,10 @@ window.clear()
 picz[counter].blit(0,0)
 pyglet.clock.schedule_interval(nextPic, 7.0)
 counter = counter + 1
+
+@window.event
+def on_draw():
+    pass
 
 # rapperz
 
@@ -196,16 +201,17 @@ def close():
 def on_key_press(symbol, modifiers):
     if symbol == key.Q:
         close()
-    elif symbol == key.O:
-        player.pause()
-        r.terminate()
-        rapperTimer.cancel()
-        barTimer.cancel()
-        print('paused')
     elif symbol == key.P:
-        player.play()
-        rap()
-        print('playing')
+        if player.playing == True:
+            player.pause()
+            r.terminate()
+            rapperTimer.cancel()
+            barTimer.cancel()
+            pyglet.clock.unschedule(nextPic)
+        else:
+            player.play()
+            rap()
+            pyglet.clock.schedule_interval(nextPic, 7.0)
     else:
         pyglet.clock.unschedule(nextPic)
         pyglet.clock.schedule_interval(nextPic, 7.0)
