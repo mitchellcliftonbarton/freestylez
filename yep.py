@@ -139,12 +139,13 @@ song14 = pyglet.resource.media('beats/ready.mp3', streaming=False)
 song15 = pyglet.resource.media('beats/welcome.mp3', streaming=False)
 song16 = pyglet.resource.media('beats/what.mp3', streaming=False)
 song17 = pyglet.resource.media('beats/saliva.mp3', streaming=False)
+song18 = pyglet.resource.media('beats/vibe.mp3', streaming=False)
 player = pyglet.media.Player()
 
 # function that shuffles and plays songs
 
 def beatz():
-    playlist = [song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16, song17]
+    playlist = [song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15, song16, song17, song18]
     shuffle(playlist)
     player.queue(playlist[0])
     player.queue(playlist[1])
@@ -161,6 +162,7 @@ def beatz():
     player.queue(playlist[13])
     player.queue(playlist[14])
     player.queue(playlist[15])
+    player.queue(playlist[16])
     player.play()
 
 # repeat event for beatz function
