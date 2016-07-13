@@ -194,8 +194,18 @@ def close():
 
 @window.event
 def on_key_press(symbol, modifiers):
-    if symbol == key.A:
+    if symbol == key.Q:
         close()
+    elif symbol == key.O:
+        player.pause()
+        r.terminate()
+        rapperTimer.cancel()
+        barTimer.cancel()
+        print('paused')
+    elif symbol == key.P:
+        player.play()
+        rap()
+        print('playing')
     else:
         pyglet.clock.unschedule(nextPic)
         pyglet.clock.schedule_interval(nextPic, 7.0)
