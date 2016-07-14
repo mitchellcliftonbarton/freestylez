@@ -8,12 +8,12 @@ import subprocess
 # basic app info
 
 pyglet.options['audio'] = ('openal', 'silent')
-window = pyglet.window.Window(width=640, height=640)
+window = pyglet.window.Window(width=640, height=800)
 window.activate()
 window.set_caption('F R E E S T Y L E Z')
-pic1 = pyglet.resource.image('grad.jpg')
-pic2 = pyglet.resource.image('grad-2.jpg')
-pic3 = pyglet.resource.image('grad-3.jpg')
+pic1 = pyglet.resource.image('jersey-1.jpg')
+pic2 = pyglet.resource.image('jersey-2.jpg')
+pic3 = pyglet.resource.image('jersey-3.jpg')
 picz = [pic1, pic2, pic3]
 shuffle(picz)
 picTimer = None
