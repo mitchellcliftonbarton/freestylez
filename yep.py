@@ -118,7 +118,7 @@ con = ['alright man', 'pay cut', 'bass line', 'turn up the bass', 'turn up the v
 pup = ['rest assured', 'heaven', 'influence', 'running', 'take a guess', 'on the beat', 'lay it down', 'bust it', 'garbage', 'running in the streets', 'grocery shopping']
 pu = ['messed up', 'determination', 'shower', 'dirt', 'toes', 'ankle', '22 rims', 'million bucks', 'coins', 'dread locks', 'pony tail', 'corn rows', 'flat top']
 hair = ['mohawk', 'mullet', 'bleached tips', 'steps', 'fade', 'sideburns', 'handle bar mustache', 'goatee', 'haircut']
-thanks = ['thanks tribe', 'thanks fabo', 'thanks mase', 'thanks yeezy', 'thanks del', 'thanks cool kids', 'thanks mikey and chuck', 'thanks wu tang', 'thanks souls of mischief', 'thanks nas', 'thanks jay', 'thanks T.I.', 'thanks doom', 'thanks snoop', 'thanks pharell', 'thanks the game', 'thanks fugees']
+thanks = ['thanks tribe', 'thanks fabo', 'thanks kendrick', 'thanks mase', 'thanks yeezy', 'thanks del', 'thanks cool kids', 'thanks mikey and chuck', 'thanks wu tang', 'thanks souls of mischief', 'thanks nas', 'thanks jay', 'thanks T.I.', 'thanks doom', 'thanks snoop', 'thanks pharell', 'thanks the game', 'thanks fugees']
 shoutout = ['let me give a shout out to', 'give props to', 'holding it down', 'shout out', 'featuring the', 'free styles', 'rap battle']
 
 wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
