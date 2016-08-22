@@ -118,13 +118,15 @@ con = ['alright man', 'pay cut', 'bass line', 'turn up the bass', 'turn up the v
 pup = ['rest assured', 'heaven', 'influence', 'running', 'take a guess', 'on the beat', 'lay it down', 'bust it', 'garbage', 'running in the streets', 'grocery shopping']
 pu = ['messed up', 'determination', 'shower', 'dirt', 'toes', 'ankle', '22 rims', 'million bucks', 'coins', 'dread locks', 'pony tail', 'corn rows', 'flat top']
 hair = ['mohawk', 'mullet', 'bleached tips', 'steps', 'fade', 'sideburns', 'handle bar mustache', 'goatee', 'haircut']
+thanks = ['thanks tribe', 'thanks fabo', 'thanks mase', 'thanks yeezy', 'thanks del', 'thanks cool kids', 'thanks mikey and chuck', 'thanks wu tang', 'thanks souls of mischief', 'thanks nas', 'thanks jay', 'thanks T.I.', 'thanks doom', 'thanks snoop', 'thanks pharell', 'thanks the game', 'thanks fugees']
+shoutout = ['let me give a shout out to', 'give props to', 'holding it down', 'shout out', 'featuring the', 'free styles', 'rap battle']
 
 wordz = [greetings, be, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13,
          sports, fruits, veggies, art, landscape, mystical, cars, animals, thug,
          geo, cities, countries, money, colors, brands, shoes, bling, teams, mrthug,
          marks, chips, mrp, days, months, exp, mrsports, comp, disgust, bounce, bounce2,
          gadgets, clothes, js, jstype, sneak, mexp, yuup, yuup2, rapM, masfoods, word, word2,
-         blah, connect, conn, con, pup, pu, hair]
+         blah, connect, conn, con, pup, pu, hair, thanks, shoutout]
 
 # songs
 
@@ -183,7 +185,7 @@ player.push_handlers(on_player_eos)
 barLen = list(range(1,10))
 swTm = [30.0, 45.0, 60.0, 20.0, 75.0, 80.0]
 timez = [.5, .75, 1.0, 1.5, 1.75]
-rates = ['175', '175', '100', '50', '175', '210', '300', '150', '70', '175', '200', '60', '175', '175', '175']
+rates = ['175', '175', '100', '175', '210', '300', '150', '70', '175', '200', '175', '175', '175']
 lead = random.choice(rapperz)
 barTimer = None
 r = None
@@ -238,7 +240,7 @@ rapperTimer.start()
 def rap():
     global barTimer
     barTimer = Timer(random.choice(timez), rap)
-    bar = ' '.join(random.choice(wordz[randint(0,63)]) for _ in range(random.choice(barLen)))
+    bar = ' '.join(random.choice(wordz[randint(0,65)]) for _ in range(random.choice(barLen)))
     global r
     r = subprocess.Popen('say -v ' + lead + '-r ' + random.choice(rates) + ' ' + bar, shell=True)
     r.wait()
