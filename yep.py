@@ -3,18 +3,21 @@ from random import shuffle
 from random import randint
 from threading import Timer
 from pyglet.window import key
+from pyglet.gl import *
 import subprocess
 
 # basic app info
 
 pyglet.options['audio'] = ('openal', 'silent')
-window = pyglet.window.Window(width=640, height=800)
+window = pyglet.window.Window(width=400, height=500)
 window.activate()
 window.set_caption('F R E E S T Y L E Z')
-pic1 = pyglet.resource.image('jersey-1.jpg')
-pic2 = pyglet.resource.image('jersey-2.jpg')
-pic3 = pyglet.resource.image('jersey-3.jpg')
-picz = [pic1, pic2, pic3]
+pic1 = pyglet.resource.image('ad.jpg')
+pic2 = pyglet.resource.image('ad-2.jpg')
+pic3 = pyglet.resource.image('ad-3.jpg')
+pic4 = pyglet.resource.image('ad-4.jpg')
+pic5 = pyglet.resource.image('ad-5.jpg')
+picz = [pic1, pic2, pic3, pic4, pic5]
 shuffle(picz)
 picTimer = None
 
@@ -23,7 +26,7 @@ counter = 0
 def nextPic(dt):
     window.clear()
     global counter
-    if counter > 2:
+    if counter > 4:
         counter = 0
         picz[counter].blit(0,0)
         counter = counter + 1
