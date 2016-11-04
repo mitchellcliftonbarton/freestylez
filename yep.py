@@ -11,7 +11,7 @@ import subprocess
 pyglet.options['audio'] = ('openal', 'silent')
 window = pyglet.window.Window(width=400, height=500)
 window.activate()
-window.set_caption('F R E E S T Y L E Z')
+window.set_caption('F R E E S T Y L E Z ( B A T T L E )')
 pic1 = pyglet.resource.image('ad.jpg')
 pic2 = pyglet.resource.image('ad-2.jpg')
 pic3 = pyglet.resource.image('ad-3.jpg')
@@ -186,7 +186,7 @@ player.push_handlers(on_player_eos)
 # rapping stuff
 
 barLen = list(range(1,10))
-swTm = [30.0, 45.0, 60.0, 20.0, 75.0, 80.0]
+swTm = [30.0, 45.0, 40.0, 20.0, 15.0, 25.0]
 timez = [.5, .75, 1.0, 1.5, 1.75]
 rates = ['175', '175', '100', '175', '210', '300', '150', '70', '175', '200', '175', '175', '175']
 lead = random.choice(rapperz)
@@ -233,6 +233,7 @@ def choozRapper():
     rapperTimer = Timer(random.choice(swTm), choozRapper)
     global lead
     lead = random.choice(rapperz)
+    print ('/////------ S W I T C H I N G  R A P P E R S ------/////')
     rapperTimer.start()
 
 rapperTimer = Timer(random.choice(swTm), choozRapper)
