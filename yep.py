@@ -8,15 +8,31 @@ import subprocess
 
 # basic app info
 
+if getattr( sys, 'frozen', False ) :
+        # running in a bundle
+        print('bundle')
+else :
+        # running live
+        print('live')
+
+def resource_path(relative_path):
+    #Get absolute path to resource, works for dev and for PyInstaller
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+
+    return os.path.join(os.path.abspath("."), relative_path)
+
 pyglet.options['audio'] = ('openal', 'silent')
 window = pyglet.window.Window(width=400, height=500)
 window.activate()
-window.set_caption('F R E E S T Y L E Z ( B A T T L E )')
-pic1 = pyglet.resource.image('ad.jpg')
-pic2 = pyglet.resource.image('ad-2.jpg')
-pic3 = pyglet.resource.image('ad-3.jpg')
-pic4 = pyglet.resource.image('ad-4.jpg')
-pic5 = pyglet.resource.image('ad-5.jpg')
+window.set_caption('F R E E S T Y L E Z  ( B A T T L E )')
+print('worked')
+# pic1 = pyglet.resource.image('imgs/ad.jpg')
+pic1 = pyglet.image.load(resource_path('imgs/ad.jpg'))
+pic2 = pyglet.resource.image('imgs/ad-2.jpg')
+pic3 = pyglet.resource.image('imgs/ad-3.jpg')
+pic4 = pyglet.resource.image('imgs/ad-4.jpg')
+pic5 = pyglet.resource.image('imgs/ad-5.jpg')
 picz = [pic1, pic2, pic3, pic4, pic5]
 shuffle(picz)
 picTimer = None
